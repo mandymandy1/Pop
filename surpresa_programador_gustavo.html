@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para o Gustavo</title>
+    <style>
+        body {
+            background-color: #000;
+            color: #00FF00;
+            font-family: 'Courier New', monospace;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .terminal {
+            width: 80%;
+            max-width: 600px;
+            height: 400px;
+            background-color: #000;
+            border: 1px solid #333;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+            white-space: pre-wrap;
+            overflow: hidden;
+            line-height: 1.5;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal" id="terminal"></div>
+    <script>
+        const messages = [
+            "Compilando surpresa para Gustavo...",
+            "Inicializando variáveis...",
+            "Carregando mensagem...",
+            "Renderizando...",
+            "",
+            "Oi, Gustavo! :)",
+            "Eu quis fazer algo diferente para você,",
+            "então fiz isso com carinho e um pouco de criatividade.",
+            "",
+            "Espero que tenha gostado!",
+            "Você é especial. <3"
+        ];
+        
+        let index = 0;
+        const terminal = document.getElementById('terminal');
+
+        function typeMessage() {
+            if (index < messages.length) {
+                terminal.innerHTML += messages[index] + "\n";
+                index++;
+                setTimeout(typeMessage, 1000);
+            }
+        }
+        typeMessage();
+    </script>
+</body>
+</html>
